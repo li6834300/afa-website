@@ -1,0 +1,18 @@
+{xiao:template header.html}
+ 
+ <div id="productCat">
+  <div class="productList">
+
+{xiao:list catid=$catid page=$page }
+     <dl>
+    <dd>
+    <p class="img"><a href="{xiao:$xiao['url']}"><img src="{xiao:function.image($xiao['thumb'])}" width="135" height="135" /></a></p>
+    <p class="name"><a href="{xiao:$xiao['url']}">{xiao:$xiao['title']}.</a></p>
+     </dd>
+   </dl> 
+{/xiao:list}
+  
+     </div>
+  <div class="pager">{xiao:$pagelist}</div> </div>
+   
+{xiao:template footer.html}

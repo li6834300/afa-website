@@ -1,0 +1,52 @@
+{xiao:template header.html}
+		<!----顶部导航 结束 ------------>
+		
+		<div class="main">
+			
+			<!-----banner 结束----->
+            
+			<div class="activity-main">
+
+				<div class="activity-div">
+					<div class="wrap">
+						{xiao:template curr.html}
+						<div class="imgList">
+							<div class="row">
+                             {xiao:list catid=$catid page=$page xiaocms=1 pagesize=24}
+								<div class="col-md-4 col-xs-6">
+									<li>{xiao:if $xiao['wb']!=""}<a href="{xiao:$xiao['wb']}" target="_blank">{xiao:else}<a href="{xiao:$xiao['url']}" target="_blank">{/xiao:if}
+										<img class="samLazyImg"  data-original="{xiao:$xiao['thumb']}" src="{xiao:$xiao['thumb']}"/>
+										<div class="text">
+											<strong>{xiao:$xiao['yingwen']}</strong>
+											<span>{xiao:$xiao['title']}</span>
+										</div>
+									</a>
+								</div>
+                               {/xiao:list}
+                                 <div class="listpage" style="clear:both;">{xiao:$pagelist}</div> 
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+            
+			<!--footer-->
+			{xiao:template footer.html}
+	<script src="{xiao:$site_template}js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/jquery.SuperSlide.2.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/wow.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/script.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("img.samLazyImg").lazyload({
+		  placeholder : "{xiao:$site_template}images/logo-down.png", //用图片提前占位
+		  effect: "fadeIn", // 载入使用何种效果
+		  threshold: 0, // 提前开始加载
+		  failurelimit : 10 // 图片排序混乱时
+		});
+	</script>
+

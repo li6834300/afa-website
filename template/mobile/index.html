@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>{xiao:$site_title}</title>
+<link href="{xiao:$site_template}style.css" rel="stylesheet" type="text/css" />
+<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="{xiao:$site_template}images/global.js"></script>
+<script type="text/javascript" src="{xiao:$site_template}images/slide_show.js"></script>
+</head>
+<body>
+<div id="wrapper">
+ <div id="header">
+  <em class="logo">{xiao:$site_name}</em>
+   <em></em>
+			<a href="#" onclick='$("#catalog").toggle();' class="siteMap"></a></div>
+
+<div id="catalog" style="display: none;" >
+  <ul>
+				{xiao:nav  }
+      <li><a href="{xiao:$xiao['url']}">{xiao:$xiao['catname']}</a></li>
+				{/xiao:nav}
+     </ul>
+ </div>
+ <div id="index">
+  <div class="slideShow">
+ <ul class="slides">
+    <li><a href="#" target="_blank"><img src="{xiao:block 1}"/></a></li>
+    <li><a href="#" target="_blank"><img src="{xiao:block 2}"/></a></li>
+    <li><a href="#" target="_blank"><img src="{xiao:block 3}"/></a></li>
+   </ul>
+</div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+ $('.slides').bxSlider({
+ });
+})
+
+</script>
+<div id="mainNav">
+   <ul>
+    {xiao:nav  }
+     <li><a href="{xiao:$xiao['url']}">{xiao:$xiao['catname']}</a></li>
+	{/xiao:nav}
+   </ul>
+  </div>
+  <div id="indexSearch">
+  <div class="searchBox">
+		<form method="Get" action="index.php" >
+		<input type="hidden"  value="index"  name="c" />
+		<input type="hidden"  value="search"  name="a" />
+  <input name="kw" type="text" class="keyword" autocomplete="off" maxlength="128" value="产品搜索" >
+  <input type="submit" class="btnSearch" value="提交">
+ </form>
+</div>
+</div>
+  <div class="incBox">
+ <h3><a href="{xiao:$cats[5][url]}" class="more">查看更多商品 ></a>{xiao:$cats[5][catname]}</h3>
+ <div class="productList">
+	{xiao:list catid=5 num=4}
+   <dl>
+   <dd>
+   <p class="img"><a href="{xiao:$xiao['url']}"><img src="{xiao:function.image($xiao[thumb])}" width="135" height="135" /></a></p>
+   <p class="name"><a href="{xiao:$xiao['url']}">{xiao:$xiao['title']}</a></p>
+   </dd>
+  </dl>
+	{/xiao:list}
+ 
+ </div >
+</div>
+  <div class="incBox">
+ <h3><a href="{xiao:$cats[2][url]}" class="more">查看更多文章 ></a>{xiao:$cats[2][catname]}</h3>
+ <div class="articleList">
+	{xiao:list catid=2 num=5  }
+    <dl>
+   <dt><a href="{xiao:$xiao['url']}">{xiao:function.strcut($xiao[title],34,'')}</a></dt>
+   <dd><em>发布时间：{xiao:function.date("Y-m-d", $xiao['time'])}</em><em>点击数：101</em></dd>
+  </dl>
+	{/xiao:list}
+ 
+   </div>
+</div>
+ </div>
+
+{xiao:template footer.html}

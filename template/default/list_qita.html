@@ -1,0 +1,41 @@
+{xiao:template header.html}		
+		<div class="main">
+			
+			<!-----banner 结束----->
+			<div class="activity-main">
+				
+				<div class="activity-div">
+					<div class="wrap">
+						{xiao:template curr.html}
+                        
+						<div class="imgList">
+                        {xiao:list catid=$catid page=$page xiaocms=1 pagesize=20}
+							<div class="itemDiv">
+								<li>{xiao:if $xiao['wb']!=""}<a href="{xiao:$xiao['wb']}" target="_blank">{xiao:else}{/xiao:if}<img class="samLazyImg"  data-original="{xiao:$xiao['thumb']}" alt=""/>{xiao:if $xiao['wb']!=""}</a>{xiao:else}{/xiao:if}
+								<div class="text"><strong>{xiao:$xiao['title']}</strong>   {xiao:$xiao['yingwen']}</div>
+							</div>
+                          {/xiao:list}  
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+			<!--footer-->
+{xiao:template footer.html}
+
+	<script src="{xiao:$site_template}js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/jquery.SuperSlide.2.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/wow.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/script.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{xiao:$site_template}js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("img.samLazyImg").lazyload({
+		  placeholder : "{xiao:$site_template}images/logo-down.png", //用图片提前占位
+		  effect: "fadeIn", // 载入使用何种效果
+		  threshold: 0, // 提前开始加载
+		  failurelimit : 10 // 图片排序混乱时
+		});
+	</script>

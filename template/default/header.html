@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>{xiao:$site_title}</title>
+        <meta name="keywords" content="{xiao:$site_keywords}" />
+        <meta name="description" content="{xiao:$site_description}" />
+		<link rel="stylesheet" type="text/css" href="{xiao:$site_template}css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="{xiao:$site_template}css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="{xiao:$site_template}css/style.css"/>
+        
+        
+		<!--[if lt IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<!---- 顶部导航 开始 ------------>
+		<header>
+			<div class="header-container">
+				<div class="logoDiv clearfix">
+					<div class="wrap">
+						<a href="/" class="fl logoImg"><img src="{xiao:$site_template}images/logo.png" alt=""/></a>
+						<a href="###" class="fr orderDiv" data-toggle="modal" data-target="#myModal"><span>参观预约</span></a>
+					</div>
+				</div>
+				<a href="###" class="mbtn"></a>
+				<div class="menu">
+					<div class="wrap">
+						<ul class="level1 clearfix">
+							{xiao:nav num=6}
+							<li class="level">
+				<a href="{xiao:$xiao['url']}" {xiao:if $current} class="on" {/xiao:if}  {xiao:if $xiao['xin']!="" } target="_blank"{xiao:else} {/xiao:if}>{xiao:$xiao['catname']}<span>{xiao:$xiao['yw']}</span></a>
+
+                                 {xiao:if  $xiao['child']}
+								<ul class="level2">
+                                 {xiao:nav parentid=$xiao[catid] }
+									<li><a href="{xiao:$xiao['url']}" {xiao:if $xiao['xin']!="" } target="_blank"{xiao:else} {/xiao:if}>{xiao:$xiao['catname']}<span>{xiao:$xiao['yw']}</span></a></li>
+                                {/xiao:nav}
+								</ul>
+                                {/xiao:if}
+
+
+							</li>
+                        {/xiao:nav}
+						</ul>
+				
+					</div>
+				</div>
+			</div>
+		</header>

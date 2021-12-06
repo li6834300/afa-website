@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>东莞校区动态</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<!--[if lt IE 9]>
+		  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+		  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<!---- 顶部导航 开始 ------------>
+		<header>
+			<div class="header-container">
+				<div class="logoDiv clearfix">
+					<div class="wrap">
+						<a href="index.html" class="fl logoImg"><img src="images/logo.png" alt=""/></a>
+						<a href="###" class="fr orderDiv" data-toggle="modal" data-target="#myModal"><span>参观预约</span></a>
+					</div>
+				</div>
+				<a href="###" class="mbtn"></a>
+				<div class="menu">
+					<div class="wrap">
+						<ul class="level1 clearfix">
+                        
+                        {xiao:nav num=5}
+							<li class="level">
+								<a href="{xiao:$xiao['url']}">{xiao:$xiao['title']}<span>{xiao:$xiao['yw']}</span></a>
+                                 {xiao:if  $xiao['child']}
+								<ul class="level2">
+                                 {xiao:nav parentid=$xiao[catid] }
+									<li><a href="{xiao:$xiao['url']}">{xiao:$xiao['title']} <span>{xiao:$xiao['yw']}</span></a></li>
+                                {/xiao:nav}
+								</ul>
+                                {/xiao:if}
+							</li>
+                        {/xiao:nav}
+						</ul>
+				
+					</div>
+				</div>
+			</div>
+		</header>
+		<!----顶部导航 结束 ------------>
+		
+		<div class="main">
+			
+			<!-----banner 结束----->
+			<div class="activity-main">
+				
+				<div class="activity-div">
+					<div class="wrap">
+						<div class="titleDiv">
+							<span class="fl">学校动态</span>
+							<span class="fr">Campus Dynamics</span>
+						</div>
+						<div class="textList">
+							<ul>	
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+								<li><a href="###" target="_blank"><span class="text">5月9日入学测试结果公布</span><span class="date">2019.05.18</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+			
+			<!--footer-->
+			<div class="footer">
+				<div class="wrap">
+					<div class="row">
+						<div class="col-md-4 col-xs-12">
+							<div class="conDiv">
+								<img src="images/logo-down.png"/>
+								<div class="textDiv">
+									<div class="telDiv">座机电话：<br />07693353-8877</div>
+									<div class="addrDiv">东莞市东城街道东城光明路6号</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-8 col-xs-12 rightDiv">
+							<div class="ewmDiv">
+								<img src="images/ewm1.jpg"/>
+								<span>法拉古特东莞校区</span>
+							</div>
+							<div class="ewmDiv">
+								<img src="images/ewm2.jpg"/>
+								<span>法拉古特东莞校区招生主任：Kevin</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<!--弹窗-->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel">咨询与报名</h4>
+					</div>
+					<div class="modal-body">
+						<form action="" method="post">
+							<div class="form-group">
+								<input type="text" name="" id="" value="" class="form-control" placeholder="姓名"/>
+							</div>
+							<div class="form-group">
+								<label for="sex1" class="radio-inline">男<input type="radio" id="sex1" name="sex" checked/></label>
+								<label for="sex2" class="radio-inline">女<input type="radio" id="sex2" name="sex"/></label>
+							</div>
+							<div class="form-group">
+								<input type="text" name="" id="" value="" class="form-control" placeholder="电话"/>
+							</div>
+							<div class="form-group">
+								<input type="text" name="" id="" value="" class="form-control" placeholder="就读学校"/>
+							</div>
+							<div class="form-group">
+								<select class="form-control">
+							      <option value="">现在就读年级</option>
+							    </select>
+							</div>
+							<button type="button" class="subBtn">提 交</button>
+						</form>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+	  	
+	</body>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.SuperSlide.2.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/wow.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/script.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,18 @@
+{xiao:template header.html}
+ <div id="articleCat">
+  <div class="articleList">
+                {xiao:if empty($num)}
+                <h3>抱歉，没有找到“{xiao:$kw}”相关的内容。</h3>
+                {xiao:else}
+                    {xiao:loop $data $xiao}
+    <dl>
+     <dt><a href="{xiao:$xiao['url']}">{xiao:$xiao['title']}</a></dt>
+     <dd><em>发布时间：{xiao:function.date('Y-m-d', $xiao['time'])}</em><em>点击数：{xiao:$xiao['hits']}</em></dd>
+    </dl> 
+                    {/xiao:loop}
+                {/xiao:if}
+ 
+      </div>
+  <div class="pager">{xiao:$pagelist}</div> </div>
+  
+{xiao:template footer.html}

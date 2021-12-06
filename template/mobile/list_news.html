@@ -1,0 +1,14 @@
+{xiao:template header.html}
+ <div id="articleCat">
+  <div class="articleList">
+{xiao:list catid=$catid page=$page }
+    <dl>
+     <dt><a href="{xiao:$xiao['url']}">{xiao:$xiao['title']}</a></dt>
+     <dd><em>发布时间：{xiao:function.date('Y-m-d', $xiao['time'])}</em><em>点击数：{xiao:$xiao['hits']}</em></dd>
+    </dl> 
+{/xiao:list}
+ 
+      </div>
+  <div class="pager">{xiao:$pagelist}</div> </div>
+  
+{xiao:template footer.html}

@@ -1,0 +1,34 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>{xiao:$site_title}</title>
+	<link href="{xiao:$site_template}style.css" rel="stylesheet" type="text/css" />
+	<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{xiao:$site_template}images/global.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<a href="{xiao:$site_url}" class="home"></a>
+			<em>{xiao:$catname}</em>
+			<a href="#" onclick='$("#catalog").toggle();' class="siteMap"></a></div>
+
+<div id="catalog" style="display: none;" >
+  <ul>
+				{xiao:nav  }
+      <li><a href="{xiao:$xiao['url']}">{xiao:$xiao['catname']}</a></li>
+				{/xiao:nav}
+     </ul>
+ </div>
+
+			<div class="treeBox">
+				{xiao:nav parentid=5 }
+				<a {xiao:if $current}class="cur"{/xiao:if} href="{xiao:$xiao['url']}">{xiao:$xiao['catname']}</a>
+				{/xiao:nav}
+			</div>

@@ -1,0 +1,30 @@
+{xiao:template header.html}
+		<!----顶部导航 结束 ------------>
+		<div class="main">
+			<!-----banner 结束----->
+			<div class="activity-main">
+				<div class="activity-div">
+					<div class="wrap">
+						{xiao:template curr.html}
+						<div class="textList">
+							<ul>	
+                            {xiao:list catid=$catid page=$page pagesize=20 xiaocms=1}
+								<li>{xiao:if $xiao['wb']!=""}<a href="{xiao:$xiao['wb']}" target="_blank">{xiao:else}<a href="{xiao:$xiao['url']}" target="_blank">{/xiao:if}<span class="text">{xiao:$xiao['title']}</span><span class="date">{xiao:function.date("Y.m.d", $xiao['time'])}</span></a></li>
+                            {/xiao:list}
+                            
+							</ul>
+                              <div class="listpage" style="clear:both;">{xiao:$pagelist}</div> 
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<!--footer-->
+			{xiao:template footer.html}
+	<script src="{xiao:$site_template}js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/jquery.SuperSlide.2.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/wow.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{xiao:$site_template}js/script.js" type="text/javascript" charset="utf-8"></script>
+

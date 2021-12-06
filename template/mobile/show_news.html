@@ -1,0 +1,9 @@
+{xiao:template header.html}
+ <div id="article">
+   <h1>{xiao:$title}</h1>
+   <div class="info">发布时间：{xiao:function.date('Y-m-d H:i:s', $time)} 点击数：<script type="text/javascript" src="{xiao:function.url('api/hits',array('id'=>$id))}"></script>
+      </div>
+   <div class="content">{xiao:$content}</div>
+ </div>
+  
+{xiao:template footer.html}

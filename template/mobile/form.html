@@ -1,0 +1,26 @@
+{xiao:template header.html}
+  <div id="page">
+   <h1>{xiao:$form_name} </h1>
+   <div class="content">            <form action="" method="post">
+			<table width="100%" class="table_form ">
+			<tr>
+				<th width="100"></th>
+				<td></td>
+			</tr>
+			{xiao:$fields}
+			{xiao:if $code}
+			<tr>
+				<th>验证码：</th>
+				<td><input name="code" type="text" class="input-text" size=10 /><img src="{xiao:function.url('api/checkcode', array('width'=>80,'height'=>25))}" align="absmiddle"></td>
+			</tr>
+			{/xiao:if}
+			<tr>
+				<th >&nbsp;</th>
+				<td ><input type="submit" class="button" value="提 交" name="submit"></td>
+			</tr>
+			</table>
+			</form>
+</div>
+ </div>
+ 
+{xiao:template footer.html}
